@@ -1,13 +1,25 @@
-function App() {
+// src/App.js
+import React from 'react';
+import NavBar from './components/NavBar';
+import HeroSection from './components/HeroSection';
+import KeyFeatures from './components/KeyFeatures';
+import HowItWorks from './components/HowItWorks';
+import ContactUs from './components/ContactUs';
+import Footer from './components/Footer';
+
+
+const App = () => {
   return (
-    <div className="bg-blue-500 text-white text-center p-8">
-      <h1 className="text-4xl font-bold">Welcome to UniConnect!</h1>
-      <p className="text-lg mt-4">Building academic connections, fostering innovation.</p>
-      <button className="mt-6 bg-white text-blue-500 font-semibold py-2 px-4 rounded-lg hover:bg-blue-100">
-        Get Started
-      </button>
+    <div>
+      <NavBar />
+      <HeroSection />
+      <KeyFeatures /> 
+      <HowItWorks />
+      <ContactUs />
+      <Footer />
+      {/* Other components can go here */}
     </div>
   );
-}
+};
 
 export default App;
