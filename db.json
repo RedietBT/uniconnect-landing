@@ -1,0 +1,47 @@
+{
+  "users": [
+    {
+      "id": "7f6e",
+      "username": "arsema",
+      "email": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "73ad",
+      "username": "arsema",
+      "email": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "7a6b",
+      "username": "arsema",
+      "email": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "994f",
+      "username": "arsema",
+      "email": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "486a",
+      "username": "abc",
+      "email": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "2c77",
+      "username": "abcd",
+      "email": "ab@gmail.com",
+      "password": "abc"
+    },
+    {
+      "id": "53c2890",
+      "username": "user",
+      "email": "user@gmail.com",
+      "password": "123"
+    }
+  ],
+  "registeredUsers": []
+}
