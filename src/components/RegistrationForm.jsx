@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+// src/components/RegistrationForm.jsx
+import React, { useState, useContext } from 'react';
+import { AuthContext } from './AuthContext'; // Adjust the import according to your structure
 
 const RegistrationForm = ({ onClose }) => {
+  const { login } = useContext(AuthContext); // Use the context to get the login function
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -25,10 +28,7 @@ const RegistrationForm = ({ onClose }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            id: Math.random().toString(36).substring(2, 9), // Generate random ID
-            ...formData,
-          }),
+          body: JSON.stringify(formData),
         });
 
         if (!response.ok) {
@@ -36,10 +36,8 @@ const RegistrationForm = ({ onClose }) => {
         }
 
         const data = await response.json();
-        localStorage.setItem('user', JSON.stringify(data));
-
         // Automatically log in the user
-        await loginUser(formData.username, formData.password);
+        login(data); // Use the login function from context
 
         // Show success message
         setSubmitted(true);
@@ -47,34 +45,14 @@ const RegistrationForm = ({ onClose }) => {
         // Close the form after a brief delay
         setTimeout(() => {
           setSubmitted(false);
-          onClose(); // Close the form after success
+          onClose();
         }, 3000);
       } catch (error) {
         console.error('Error registering user:', error);
+        setErrors({ submit: error.message }); // Display general error
       }
     } else {
       setErrors(formErrors);
-    }
-  };
-
-  const loginUser = async (username, password) => {
-    try {
-      const response = await fetch('http://localhost:5000/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Error logging in user');
-      }
-
-      const data = await response.json();
-      localStorage.setItem('user', JSON.stringify(data));
-    } catch (error) {
-      console.error('Error logging in user:', error);
     }
   };
 
@@ -95,9 +73,10 @@ const RegistrationForm = ({ onClose }) => {
       <h2 className="text-xl font-bold mb-4">Create an Account</h2>
       {submitted ? (
         <div className="bg-[#5e208f] text-white p-4 rounded mb-4 flex items-center">
-          <span role="img" aria-label="welcome" className="text-2xl mr-2">🎉</span>
-          <p>Successfully created your UniConnect account! Welcome! 🌟</p>
-        </div>
+        <span role="img" aria-label="welcome" className="text-2xl mr-2">🎉</span>
+        <p>Successfully created your account! Welcome! 🌟</p>
+      </div>
+      
       ) : (
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -136,6 +115,7 @@ const RegistrationForm = ({ onClose }) => {
             />
             {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
           </div>
+          {errors.submit && <p className="text-red-500 text-sm">{errors.submit}</p>}
           <div className="flex justify-between">
             <button type="submit" className="bg-purple-500 text-white px-4 py-2 rounded">
               Create Account

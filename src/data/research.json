@@ -1,0 +1,67 @@
+[
+    {
+      "title": "AI in Healthcare",
+      "description": "Exploring the use of AI technologies in diagnosing diseases.",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6616181/",
+      "image": "../assets/artifical-intelligence-ai-in-healthcare-market-2020-2030-1630414375.jpeg",
+      "researcher": "Dr. John Doe",
+      "email": "johndoe@example.com"
+    },
+    {
+      "title": "Sustainable Energy Solutions",
+      "description": "Researching renewable energy sources and their applications.",
+      "link": "https://sustainenergyres.springeropen.com/",
+      "image": "../assets/sustainable-energy.jpg",
+      "researcher": "Dr. Jane Smith",
+      "email": "janesmith@example.com"
+    },
+    {
+      "title": "Quantum Computing Advances",
+      "description": "Investigating the potential of quantum computing to solve complex problems.",
+      "link": "https://link.springer.com/article/10.1007/s13222-024-00467-4",
+      "image": "../assets/quantum.jpg",
+      "researcher": "Dr. Alice Johnson",
+      "email": "alicejohnson@example.com"
+    },
+    {
+      "title": "Blockchain Technology in Supply Chain",
+      "description": "Examining the role of blockchain in enhancing supply chain transparency.",
+      "link": "https://consensys.io/blockchain-use-cases/supply-chain-management",
+      "image": "../assets/Blockchain_Technology.jpg",
+      "researcher": "Dr. Mark Lee",
+      "email": "marklee@example.com"
+    },
+    {
+      "title": "The Future of Virtual Reality",
+      "description": "Exploring innovations in virtual reality and their implications for various industries.",
+      "link": "https://www.forbes.com/sites/bernardmarr/2020/12/18/the-future-of-virtual-reality-vr/",
+      "image": "../assets/virtual-reality.jpg",
+      "researcher": "Dr. Sarah Brown",
+      "email": "sarahbrown@example.com"
+    },
+    {
+      "title": "Gene Editing Technologies",
+      "description": "Research on CRISPR and its potential to revolutionize genetics.",
+      "link": "https://www.cytosurge.com/applications/gene-editing-techniques",
+      "image": "../assets/gene.webp",
+      "researcher": "Dr. Emily Carter",
+      "email": "emilycarter@example.com"
+    },
+    {
+      "title": "Climate Change and Agriculture",
+      "description": "Assessing the impact of climate change on crop yields.",
+      "link": "https://www.epa.gov/climateimpacts/climate-change-impacts-agriculture-and-food-supply",
+      "image": "../assets/climate.jpg",
+      "researcher": "Dr. Robert Green",
+      "email": "robertgreen@example.com"
+    },
+    {
+      "title": "Nanotechnology in Medicine",
+      "description": "Exploring the use of nanomaterials for drug delivery.",
+      "link": "https://engineeringonline.ucr.edu/blog/nanotechnology-in-medicine/",
+      "image": "../assets/nanotechnology.jpg",
+      "researcher": "Dr. Laura White",
+      "email": "laurawhite@example.com"
+    }
+
+]

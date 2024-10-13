@@ -41,6 +41,50 @@
       "username": "user",
       "email": "user@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "ldzgdfw",
+      "username": "arsema",
+      "email": "ab@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "vgrncca",
+      "username": "bizuayehu",
+      "email": "bizuayehu@gmail.com",
+      "password": "bizu"
+    },
+    {
+      "id": "13de",
+      "username": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "d851",
+      "username": "arsema",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "d780",
+      "username": "arsema",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "c814",
+      "username": "arsema@gmail.com",
+      "password": "arsemadegu"
+    },
+    {
+      "id": "3f49",
+      "username": "abebe",
+      "email": "ab@gmail.com",
+      "password": "abebebesobela"
+    },
+    {
+      "id": "9652",
+      "username": "betty",
+      "email": "betty@gmail.com",
+      "password": "bettybetty"
     }
   ],
   "registeredUsers": []

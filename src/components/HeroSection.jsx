@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import BackgroundImage from '../assets/cambridge.avif';
 import RegistrationForm from './RegistrationForm';
 import LatestNews from './LatestNews';
 import { AiOutlineClose } from 'react-icons/ai'; // Import close icon
 
-const HeroSection = ({ onGetStartedClick }) => {
-  const [isFormOpen, setIsFormOpen] = useState(false);
-
-  const handleFormClose = () => {
-    setIsFormOpen(false); 
-  };
+const HeroSection = ({ onOpenRegistration }) => {
+  const navigate = useNavigate(); // Initialize the navigate function
 
   return (
     <>
@@ -29,14 +26,14 @@ const HeroSection = ({ onGetStartedClick }) => {
 
           <div className="flex space-x-4">
             <button
-              onClick={onGetStartedClick}
+              onClick={onOpenRegistration} // Open the registration form using the passed function
               className="bg-[#5e208f] text-white py-2 px-6 rounded-lg hover:bg-[#440f69] transition duration-300 cursor-pointer"
             >
               Get Started
             </button>
             <button
               onClick={() => {
-                document.getElementById("key-features").scrollIntoView({ behavior: "smooth" });
+                navigate('/about'); // Navigate to the About page
               }}
               className="bg-white text-purple-600 py-2 px-6 rounded-lg hover:bg-gray-200 transition duration-300 cursor-pointer"
             >
@@ -44,20 +41,6 @@ const HeroSection = ({ onGetStartedClick }) => {
             </button>
           </div>
         </div>
-
-        {isFormOpen && (
-          <div className="fixed inset-0 flex items-center justify-center z-20">
-            <div className="relative bg-white p-6 rounded shadow-lg w-full max-w-md">
-              <button
-                onClick={handleFormClose}
-                className="absolute top-2 right-2 text-gray-700 hover:text-red-600 transition duration-300"
-              >
-                <AiOutlineClose className="text-2xl" />
-              </button>
-              <RegistrationForm onClose={handleFormClose} />
-            </div>
-          </div>
-        )}
       </div>
 
       <LatestNews /> {/* Include LatestNews component here */}

@@ -1,52 +1,61 @@
-import React, { useState } from 'react';
+// src/components/LoginForm.jsx
+import React, { useState, useContext } from 'react';
+import { AuthContext } from './AuthContext'; // Import AuthContext
 
 const LoginForm = ({ onLoginSuccess }) => {
+  const { login } = useContext(AuthContext); // Use context to get the login function
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Fetch user data from db.json and check if the credentials are correct
+  
     try {
-      const response = await fetch('http://localhost:5000/users');
-      const users = await response.json();
-
-      const foundUser = users.find(user => user.username === username && user.password === password);
-
-      if (foundUser) {
-        onLoginSuccess(foundUser);
-        setError(''); 
-      } else {
-        setError('Invalid username or password');
+      const response = await fetch('http://localhost:5000/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Login failed');
       }
-    } catch (err) {
-      console.error('Error:', err);
-      setError('An error occurred while logging in');
+  
+      const userData = await response.json();
+      login(userData); // Call the login function from context
+      setUsername(''); // Clear the username field
+      setPassword(''); // Clear the password field
+      setError(''); // Clear any previous error
+    } catch (error) {
+      setError(error.message); // Set error message from API response
     }
   };
-
+  
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-      {error && <p className="text-red-500">{error}</p>}
+    <form onSubmit={handleSubmit} className="flex flex-col">
       <input
         type="text"
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="border border-gray-300 p-2 rounded text-black bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-        required
+        className="mb-2 p-2 border border-gray-300 rounded"
       />
       <input
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="border border-gray-300 p-2 rounded text-black bg-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-        required
+        className="mb-2 p-2 border border-gray-300 rounded"
       />
-      <button type="submit" className="bg-[#5e208f] text-white px-4 py-2 rounded hover:bg-[#4b0e67] transition">
+      {error && <p className="text-red-500 mb-2">{error}</p>}
+      <button 
+        type="submit" 
+        className="border border-[#5e208f] text-[#5e208f] px-4 py-2 rounded-lg hover:bg-[#440f69] hover:text-white transition duration-300"
+      >
         Login
       </button>
     </form>

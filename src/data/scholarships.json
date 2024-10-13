@@ -1,0 +1,51 @@
+[
+    {
+      "title": "National Merit Scholarship",
+      "description": "Awarded to high school students based on their PSAT/NMSQT scores.",
+      "link": "https://www.nationalmerit.org",
+      "image": "../assets/National.jpg"
+    },
+    {
+      "title": "Fulbright Program",
+      "description": "Provides grants for international educational exchange.",
+      "link": "https://foreign.fulbrightonline.org",
+      "image": "../assets/Fulbright-Foreign-Student-Program-1.webp"
+    },
+    {
+      "title": "Gates Millennium Scholars Program",
+      "description": "Provides scholarships to outstanding minority students.",
+      "link": "https://www.gmsp.org",
+      "image": "../assets/gate-eligibility.jpg"
+    },
+    {
+      "title": "Coca-Cola Scholars Program",
+      "description": "Awards scholarships to high school seniors for college.",
+      "link": "https://www.coca-colascholarsfoundation.org",
+      "image": "../assets/Coca-Cola-Scholarship-2014.webp"
+    },
+    {
+      "title": "Jack Kent Cooke Foundation College Scholarship",
+      "description": "Provides scholarships for high-achieving students with financial need.",
+      "link": "https://www.jkcf.org",
+      "image": "../assets/jack-kent-cooke.jpg"
+    },
+    {
+      "title": "Davis-Putter Scholarship Fund",
+      "description": "Awards scholarships to students actively working for peace and justice.",
+      "link": "http://www.davisputter.org",
+      "image": "../assets/davis-putter.jpg"
+    },
+    {
+      "title": "Horatio Alger Scholarship",
+      "description": "Offers scholarships to students who have overcome adversity.",
+      "link": "https://scholars.horatioalger.org",
+      "image": "../assets/horatio-alger.jpg"
+    },
+    {
+      "title": "Elks National Foundation Most Valuable Student Competition",
+      "description": "Awards scholarships to high school seniors based on academic achievement.",
+      "link": "https://www.elks.org/enf/scholars/mvs.cfm",
+      "image": "../assets/elks.jpg"
+    }
+  ]
+  

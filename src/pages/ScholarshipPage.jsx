@@ -1,41 +1,65 @@
 import React, { useEffect, useState } from 'react';
+import scholarshipsData from '../data/scholarships.json';
+import NationalImage from '../assets/National.jpg';
+import FulbrightImage from '../assets/Fulbright-Foreign-Student-Program-1.webp';
+import GatesImage from '../assets/gate-eligibility.jpg';
+import CocaColaImage from '../assets/Coca-Cola-Scholarship-2014.webp';
+import JackKentImage from '../assets/jack_kent_cooke_scholarship.jpg';
+import DavisPutterImage from '../assets/Davis.png';
+import HoratioAlgerImage from '../assets/Horatioalgera.jpg';
+import ElksImage from '../assets/elks national.jpg';
 
 const ScholarshipPage = () => {
   const [scholarships, setScholarships] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchScholarships = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/scholarships'); // Adjust this URL as needed
-        if (!response.ok) throw new Error('Failed to fetch scholarships');
-        const data = await response.json();
-        setScholarships(data);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
+    const updatedScholarships = scholarshipsData.map(scholarship => {
+      switch (scholarship.title) {
+        case "National Merit Scholarship":
+          return { ...scholarship, image: NationalImage };
+        case "Fulbright Program":
+          return { ...scholarship, image: FulbrightImage };
+        case "Gates Millennium Scholars Program":
+          return { ...scholarship, image: GatesImage };
+        case "Coca-Cola Scholars Program":
+          return { ...scholarship, image: CocaColaImage };
+        case "Jack Kent Cooke Foundation College Scholarship":
+          return { ...scholarship, image: JackKentImage };
+        case "Davis-Putter Scholarship Fund":
+          return { ...scholarship, image: DavisPutterImage };
+        case "Horatio Alger Scholarship":
+          return { ...scholarship, image: HoratioAlgerImage };
+        case "Elks National Foundation Most Valuable Student Competition":
+          return { ...scholarship, image: ElksImage };
+        default:
+          return scholarship;
       }
-    };
+    });
 
-    fetchScholarships();
+    setScholarships(updatedScholarships);
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
-
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Available Scholarships</h1>
-      <ul className="list-disc pl-5">
-        {scholarships.map((scholarship) => (
-          <li key={scholarship.id} className="mb-2">
-            <h2 className="font-semibold">{scholarship.title}</h2>
-            <p>{scholarship.description}</p>
-          </li>
+    <div className="container mx-auto my-10 mt-20">
+      <h2 className="text-3xl font-bold text-[#5e208f] text-center mb-6">Scholarship Opportunities</h2>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {scholarships.map((scholarship, index) => (
+          <div key={index} className="p-4 border rounded shadow-lg bg-white transform transition-transform duration-300 hover:scale-105">
+            <img src={scholarship.image} alt={scholarship.title} className="w-full h-40 object-cover mb-4 rounded" />
+            <h3 className="text-xl font-semibold mb-2 text-purple-600">{scholarship.title}</h3>
+            <p className="text-gray-700 mb-4">{scholarship.description}</p>
+            <a
+              href={scholarship.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-purple-500 hover:underline"
+            >
+              Learn More
+            </a>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
