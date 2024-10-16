@@ -85,6 +85,36 @@
       "username": "betty",
       "email": "betty@gmail.com",
       "password": "bettybetty"
+    },
+    {
+      "id": "b9fc",
+      "username": "arsema",
+      "email": "arsemadegu@gmail.com",
+      "password": "arsema123"
+    },
+    {
+      "id": "afbe",
+      "username": "rediet",
+      "email": "redietberhanu@gmail.com",
+      "password": "redietberhanu"
+    },
+    {
+      "id": "fd42",
+      "username": "rediet ",
+      "email": "redietberhanu@gmail.com",
+      "password": "rediet123"
+    },
+    {
+      "id": "840a",
+      "username": "azalu",
+      "email": "azalu@gmail.com",
+      "password": "azalu"
+    },
+    {
+      "id": "632d",
+      "username": "degu",
+      "email": "degu@gmail.com",
+      "password": "degyaddis"
     }
   ],
   "registeredUsers": []
