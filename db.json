@@ -115,6 +115,11 @@
       "username": "degu",
       "email": "degu@gmail.com",
       "password": "degyaddis"
+    },
+    {
+      "id": "598b",
+      "username": "arsema",
+      "password": "arsemadegu"
     }
   ],
   "registeredUsers": []
